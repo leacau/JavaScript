@@ -15,3 +15,21 @@ if (unNumero == 5) {
 if (unNumero == 6) {
     console.log("no vas a ver este mensaje");
 } */
+
+let unColor = "Azul";
+
+// Con (unColor == "Rojo") comparamos si unColor es igual "Rojo"
+if (unColor == "Rojo") {
+    console.log("el color es Rojo");
+} else {
+    //La instrucción se interpreta cuando unColor NO es "Rojo"
+    console.log("el color NO es Rojo");
+}
+
+let edad = prompt("Ingrese su edad");
+
+if (edad < 18) {
+    alert("Usted no puede ingresar");
+} else {
+    alert("Puedes ingresar");
+}
