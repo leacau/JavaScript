@@ -111,23 +111,17 @@ if (colEleg == "rojo") {
 }
 
 if (nombre != "" && apellido != "") {
+    alert(
+        "Hola " +
+        nombre +
+        " tu horario de ingreso es: " +
+        hora +
+        "\nTe deseamos un bonito día."
+    );
+}
+
+if (nombre != "" && apellido != "") {
     document.write(
         `<div style="color:${color}">Hola ${nombre} tu horario de ingreso es: ${hora}<br>Te deseamos un bonito día.</div>`
     );
 }
-
-/* if (hora == "" || minut == "") {
-    alert("Por favor ingrese los datos solicitados");
-} else if (horario > "8:00") {
-    alert("Usted ha llegado tarde");
-} else if (horario > "7:45") {
-    alert("Intente llegar un poco antes");
-} else {
-    alert("Que tenga un bonito día!");
-}
- */
-/* for (let i = 0; i < 10; i++) {
-    console.log("Hola");
-} */
-
-/* document.write("Acá dejas lo que quieras que devuelva el documento"); */
