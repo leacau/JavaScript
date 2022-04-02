@@ -1,4 +1,6 @@
-alert("Hola! Vamos a registrar tu ingreso a la empresa.");
+/* Primer desafio */
+
+/* alert("Hola! Vamos a registrar tu ingreso a la empresa.");
 alert("A continuación indicanos tu apellido y nombre");
 for (var i = 1; i <= 100; i++) {
     var apellido = prompt("¿Cuál es tu apellido?");
@@ -54,4 +56,44 @@ for (var i = 1; i <= 100; i++) {
     document.write(
         `<div style="color:${color}">Hola ${nombre} tu horario de ingreso es: ${hora}<br>Eres el registro n° ${i} del día.<br>Te deseamos un bonito día.</div>`
     );
+} */
+
+/* Segundo desafio */
+alert(
+    "Hola!, te damos la bienvenida a esta calculadora de valor final de productos"
+);
+let nombre = prompt("Para comenzar, decinos tu nomnbre");
+
+let elegir = prompt(
+    `${nombre} vamos a calcular el valor final de un producto, teniendo en cuenta los impuestos o taxes por ventas que tengas en tu país y las ganancias que desees tener. ¿Continuamos? (S - N)`
+);
+while (elegir !== "N" && elegir !== "n") {
+    let precio = parseFloat(
+        prompt("Vamos! Indicanos el precio de costo del producto")
+    );
+    let impuesto = parseFloat(
+        prompt("indica el porcentaje de impuesto o taxes por venta.")
+    );
+    let ganancia = parseFloat(
+        prompt("Indica el porcentaje de markup (ganancias) a aplicar")
+    );
+    if (!isNaN(precio) && !isNaN(ganancia) && !isNaN(impuesto)) {
+        function valorFinal(costo, markup, taxes) {
+            let markupFinal = parseFloat(
+                parseFloat(costo) * parseFloat(markup / 100)
+            );
+            let taxesFinal =
+                parseFloat(costo + markupFinal) * parseFloat(taxes / 100);
+
+            return parseFloat((taxesFinal += markupFinal += costo));
+        }
+        alert(valorFinal(precio, ganancia, impuesto));
+    } else {
+        alert(
+            "No has ingresado alguno de los valores, en caso de no tener un valor, usar 0."
+        );
+    }
+
+    elegir = prompt(`${nombre}, ¿volvemos a calcular otro valor? (S-N)`);
 }
+alert("Gracias por usar nuestra calculadora! Adios " + nombre);
