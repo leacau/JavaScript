@@ -42,7 +42,6 @@ for (var i = 1; i <= 100; i++) {
     } else {
         var color = prompt("Elije entre: rojo, verde, azul, amarillo, violeta");
     }
-
     alert(
         "Hola " +
         nombre +
@@ -67,6 +66,14 @@ let nombre = prompt("Para comenzar, decinos tu nomnbre");
 let elegir = prompt(
     `${nombre} vamos a calcular el valor final de un producto, teniendo en cuenta los impuestos o taxes por ventas que tengas en tu país y las ganancias que desees tener. ¿Continuamos? (S - N)`
 );
+
+while (elegir !== "S" && elegir !== "s" && elegir !== "N" && elegir !== "n") {
+    elegir = prompt(
+        nombre +
+        ", necesitamos que ingreses un valor válido. Deseas continuar (S-N)"
+    );
+}
+
 while (elegir !== "N" && elegir !== "n") {
     let precio = parseFloat(
         prompt("Vamos! Indicanos el precio de costo del producto")
@@ -95,5 +102,11 @@ while (elegir !== "N" && elegir !== "n") {
     }
 
     elegir = prompt(`${nombre}, ¿volvemos a calcular otro valor? (S-N)`);
+    while (elegir !== "S" && elegir !== "s" && elegir !== "N" && elegir !== "n") {
+        elegir = prompt(
+            nombre +
+            ", necesitamos que ingreses un valor válido. Deseas continuar (S-N)"
+        );
+    }
 }
 alert("Gracias por usar nuestra calculadora! Adios " + nombre);
