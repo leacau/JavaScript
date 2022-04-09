@@ -58,10 +58,10 @@ for (var i = 1; i <= 100; i++) {
 } */
 
 /* Segundo desafio */
-alert(
+/* alert(
     "Hola!, te damos la bienvenida a esta calculadora de valor final de productos"
 );
-let nombre = prompt("Para comenzar, decinos tu nomnbre");
+let nombre = prompt("Para comenzar, decinos tu nombre");
 
 let elegir = prompt(
     `${nombre} vamos a calcular el valor final de un producto, teniendo en cuenta los impuestos o taxes por ventas que tengas en tu país y las ganancias que desees tener. ¿Continuamos? (S - N)`
@@ -109,4 +109,72 @@ while (elegir !== "N" && elegir !== "n") {
         );
     }
 }
-alert("Gracias por usar nuestra calculadora! Adios " + nombre);
+alert("Gracias por usar nuestra calculadora! Adios " + nombre); */
+
+//Tercer desafio
+
+class Queso {
+    constructor(nombreP, tipo, costo) {
+        this.nombreP = nombreP.toUpperCase();
+        this.tipo = tipo.toUpperCase();
+        this.costo = parseFloat(costo);
+        this.vendido = false;
+    }
+    sumaIva() {
+        this.costo = this.costo * (1 + parseFloat(30 / 100));
+    }
+}
+alert("Hola!, te damos la bienvenida a esta stockeadora de productos");
+let nombre = prompt("Para comenzar, decinos tu nombre");
+
+let agregar = prompt(
+    `${nombre} empecemos a ingresar productos a tu stock. Seguimos? (S-N)`
+);
+while (agregar != "s" && agregar != "S" && agregar != "N" && agregar != "n") {
+    agregar = prompt(
+        `${nombre} Necesitamos que ingreses un valor válido. Seguimos? (S-N)`
+    );
+}
+const quesos = [];
+while (agregar != "N" && agregar != "n") {
+    let nombreP = prompt("Indicá la marca del queso");
+    let tipo = prompt("Indicá el tipo de queso");
+    let costo = parseFloat(prompt("Indicá el precio de costo del queso"));
+    quesos.push(new Queso(nombreP, tipo, parseFloat(costo)));
+
+    agregar = prompt("Queres agregar otro producto? S-N");
+    while (
+        agregar !== "S" &&
+        agregar !== "s" &&
+        agregar !== "N" &&
+        agregar !== "n"
+    ) {
+        agregar = prompt(
+            nombre +
+            ", necesitamos que ingreses un valor válido. Deseas continuar (S-N)"
+        );
+    }
+}
+
+alert(nombre + " has agregado " + quesos.length + " productos nuevos!!.");
+
+for (const producto of quesos) {
+    alert(
+        "Marca: " +
+        producto.nombreP +
+        " Tipo: " +
+        producto.tipo +
+        " Costo: " +
+        producto.costo
+    );
+}
+
+document.write(
+    `<div style="color:black">Hola ${nombre} <br> Estos son los productos ingresados:</div>`
+);
+for (const producto of quesos) {
+    document.write(
+        `<div style="color:black">Marca: ${producto.nombreP} - Tipo: ${producto.tipo} - Costo: ${producto.costo}</div>`
+    );
+}
+alert("Gracias " + nombre + " por usar esta app!");
